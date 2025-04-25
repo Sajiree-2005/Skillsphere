@@ -2,9 +2,6 @@
 # 🌐 SkillSphere - Online Course Recommendation Web App
 
 SkillSphere is a sleek and modern Flask-based web application that helps users discover **top-rated, paid online courses** from platforms like **Udemy**, **edX**, and **Coursera**. It allows users to filter and browse curated courses by category, rating, level, and more — all in a responsive, visually appealing interface.
-
-![SkillSphere Screenshot](static/screenshot.png) <!-- Replace with actual screenshot path -->
-
 ---
 
 ## 🚀 Features
