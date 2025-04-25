@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillSphere - Online Course Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Logo wrapped in an anchor tag for redirect to the About page -->
+            <a href="{{ url_for('about') }}">
+                <img src="{{ url_for('static', filename='image.png') }}" alt="SkillSphere Logo" class="logo">
+            </a>
+            <p class="tagline">Your hub for discovering top-rated online courses.</p>
+            <p>Learn Anytime, Anywhere!</p>
+        </div>
+    </header>    
+    <main>
+        <form method="GET">
+            <div class="filters">
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                    <option value="">All</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat }}</option>
+                    {% endfor %}
+                </select>
+                <label for="level">Level:</label>
+                <select name="level" id="level">
+                    <option value="">All</option>
+                    {% for lvl in levels %}
+                        <option value="{{ lvl }}" {% if lvl == selected_level %}selected{% endif %}>{{ lvl }}</option>
+                    {% endfor %}
+                </select>
+                <label for="rating">Minimum Rating:</label>
+                <select name="rating" id="rating">
+                    <option value="">All</option>
+                    {% for r in [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5] %}
+                        <option value="{{ r }}" {% if r == selected_rating %}selected{% endif %}>{{ r }}+</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Apply Filters</button>
+            </div>
+        </form>
+        {% if courses|length == 0 %}
+            <div class="no-results">No courses found for the selected filters.</div>
+        {% endif %}
+        <div class="course-list {{ 'centered' if courses|length <= 3 }}">
+            {% for course in courses %}
+                <div class="course-card">
+                    <a href="{{ course['Course_Url'] }}" target="_blank" class="course-title">
+                        <i class="fas fa-book-open"></i> {{ course['Course_Name'] }}
+                    </a>
+                    <p><i class="fas fa-layer-group"></i> <strong>Level:</strong> {{ course['Course_Level'] }}</p>
+                    <p><i class="fas fa-star"></i> <strong>Rating:</strong> {{ course['Course_Rating'] }}</p>
+                    <p><i class="fas fa-tag"></i> <strong>Price:</strong> Paid</p>
+                    <p><i class="fas fa-list"></i> <strong>Category:</strong> {{ course['Course_Category'] }}</p>
+                    <p><i class="fas fa-globe"></i> <strong>Site:</strong> {{ course['Site'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 SkillSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>

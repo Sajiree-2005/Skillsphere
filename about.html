@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About - SkillSphere</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="/"
+          ><img
+            src="{{ url_for('static', filename='image.png') }}"
+            alt="SkillSphere Logo"
+            class="logo"
+        /></a>
+      </div>
+    </header>
+
+    <main class="about-page">
+      <section class="intro-section">
+        <div class="text">
+          <h2>About SkillSphere</h2>
+          <p>
+            SkillSphere is your personalized gateway to the world of online
+            learning. We aggregate top-rated courses across platforms like
+            Udemy, Coursera, and edX, so you can focus on learning, not
+            searching.
+          </p>
+          <p>
+            Whether you're a beginner looking to learn a new skill or a pro
+            aiming to upskill, SkillSphere filters out the noise and brings you
+            the best options based on your needs.
+          </p>
+          <a class="explore-btn" href="{{ url_for('index') }}"
+            >Explore Courses</a
+          >
+        </div>
+        <div class="image">
+          <img
+            src="{{ url_for('static', filename='about1.jpg') }}"
+            alt="Learning Illustration"
+          />
+        </div>
+      </section>
+      <section class="how-it-works">
+        <h3>How SkillSphere Works</h3>
+        <p>
+          Discovering the right course has never been easier. SkillSphere helps
+          you find courses by providing:
+        </p>
+        <div class="step">
+          <img
+            src="{{ url_for('static', filename='step1.png') }}"
+            alt="Step 1"
+          />
+          <div class="step-text">
+            <h4>1. Choose Your Category</h4>
+            <p>Select the category that best fits your learning goals.</p>
+          </div>
+        </div>
+        <div class="step">
+          <img
+            src="{{ url_for('static', filename='step2.png') }}"
+            alt="Step 2"
+          />
+          <div class="step-text">
+            <h4>2. Apply Filters</h4>
+            <p>Set your preferences for course level, rating, and budget.</p>
+          </div>
+        </div>
+        <div class="step">
+          <img
+            src="{{ url_for('static', filename='step3.png') }}"
+            alt="Step 3"
+          />
+          <div class="step-text">
+            <h4>3. Explore the Best Courses</h4>
+            <p>We recommend top-rated courses that meet your criteria.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section">
+        <h3>Why SkillSphere?</h3>
+        <div class="features">
+          <div class="feature-card">
+            <i class="fas fa-search"></i>
+            <h4>Curated Discovery</h4>
+            <p>
+              We sift through hundreds of courses to recommend the best ones for
+              your goals.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-sliders-h"></i>
+            <h4>Powerful Filters</h4>
+            <p>
+              Choose your preferred category, level, rating, and budget to
+              narrow down the options.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-brain"></i>
+            <h4>Smarter Learning</h4>
+            <p>
+              Focus on learning without distractions – we’ll help you start
+              right.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 SkillSphere. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
