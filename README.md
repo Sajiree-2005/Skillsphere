@@ -77,7 +77,11 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
-
+# To run program make sure libraries and flask is installed
+# Also your folder should have all excel files,app.py,static folder and templates folder 
+# In static folder all images and css file should be there
+# In templates folder about.html and index.html
+#  Then in VS code terminal type python app.py
 ## 📌 To-Do / Future Features
 
 - ✅ Add course sorting (by rating, price)
