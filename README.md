@@ -55,7 +55,7 @@ SkillSphere/
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/skillsphere.git
+git clone https://github.com/Sajiree-2005/skillsphere.git
 cd skillsphere
 ```
 
